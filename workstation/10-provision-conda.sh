@@ -10,6 +10,8 @@ wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.
     ~/opt/conda/bin/conda clean -tipsy && \
     echo '. "$HOME/opt/conda/etc/profile.d/conda.sh"' >> ~/.bashrc.local && \
     echo "conda activate base" >> ~/.bashrc.local
+. "$HOME/opt/conda/etc/profile.d/conda.sh"
+conda activate base
 
 echo "=== Installing Jupyter Lab... ==="
-conda install jupyterlab
+conda install -y jupyterlab
