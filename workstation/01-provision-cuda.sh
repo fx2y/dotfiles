@@ -14,7 +14,7 @@ wget --quiet ${CUDA_URL} -O /tmp/${CUDA_FILENAME} && \
     sudo dpkg -i /tmp/${CUDA_FILENAME} && \
     sudo apt-key adv --fetch-keys ${CUDA_PUBKEY_URL} && \
     sudo apt-get update && \
-    sudo apt-get install cuda
+    sudo apt-get install -y cuda
 
 echo 'export PATH="/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1${PATH:+:${PATH}}"' >> ~/.bashrc.local
 echo 'export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"' >> ~/.bashrc.local

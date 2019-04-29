@@ -2,7 +2,7 @@
 
 echo "=== Installing Hosts... ==="
 curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts | sudo tee /etc/hosts >/dev/null
-echo '127.0.0.1 $HOSTNAME' | sudo tee -a /etc/hosts >/dev/null
+echo "127.0.0.1 $HOSTNAME" | sudo tee -a /etc/hosts >/dev/null
 
 echo "=== Installing DNSCrypt... ==="
 

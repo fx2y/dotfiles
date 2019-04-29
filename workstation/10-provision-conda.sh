@@ -3,6 +3,7 @@
 sudo apt update
 
 echo "=== Installing Conda... ==="
+mkdir -p ~/opt
 wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
     bash /tmp/miniconda.sh -b -p ~/opt/conda && \
     rm /tmp/miniconda.sh && \
