@@ -31,9 +31,6 @@ echo "=== Installing Firefox... ==="
 sudo apt install -y firefox
 sudo rsync -avr conf/usr/lib/firefox/ /usr/lib/firefox
 
-echo "=== Installing Bitwarden... ==="
-sudo snap install bitwarden
-
 echo "===Installing GitNote... ==="
 GITNOTE_REPOS="https://github.com/zhaopengme/gitnote/releases/download"
 GITNOTE_VERSION="3.1.0"
