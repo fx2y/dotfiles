@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+sudo apt update && \
+    sudo apt install -y curl
+
 echo "=== Installing Hosts... ==="
 curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts | sudo tee /etc/hosts >/dev/null
 echo "127.0.0.1 $HOSTNAME" | sudo tee -a /etc/hosts >/dev/null
@@ -18,7 +21,6 @@ sudo systemctl mask systemd-resolved
 ss -lp 'sport = :domain'
 
 echo "4. change the system DNS settings"
-sudo mv /etc/resolv.conf /etc/resolv.conf.backup
 cat <<EOF | sudo tee /etc/resolv.conf
 nameserver 127.0.2.1
 options edns0 single-request-reopen

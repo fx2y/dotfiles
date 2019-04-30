@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "=== Installing Docker... ==="
+sudo apt-get remove docker docker-engine docker.io containerd runc
 echo "1. set up the repository"
 sudo apt-get update
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
