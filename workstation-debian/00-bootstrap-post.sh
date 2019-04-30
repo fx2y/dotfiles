@@ -11,6 +11,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT nowatchdog"
 GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT libahci.ignore_sss=1"
 GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3"
 set_config /etc/default/grub GRUB_CMDLINE_LINUX_DEFAULT "\"${GRUB_CMDLINE_LINUX_DEFAULT}\""
+set_config /etc/default/grub GRUB_TIMEOUT 0
 
 cat <<EOF | sudo tee -a /etc/default/grub >/dev/null
 GRUB_RECORDFAIL_TIMEOUT=${GRUB_TIMEOUT}
@@ -124,13 +125,4 @@ touch ~/.hushlogin
 touch ~/.bashrc.local
 echo 'source "$HOME/.bashrc.local"' >> ~/.bashrc
 
-cat <<EOF | sudo tee /etc/apt/sources.list >/dev/null
-deb http://deb.debian.org/debian unstable main contrib non-free
-deb http://deb.debian.org/debian-security/ stable/updates main contrib non-free
-deb http://deb.debian.org/debian stable-updates main contrib non-free
-EOF
-
-sudo apt update && \
-    sudo apt upgrade -y && \
-    sudo apt autoremove -y && \
-    sudo reboot
+sudo reboot
