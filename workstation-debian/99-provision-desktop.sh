@@ -29,6 +29,7 @@ echo 'source "$HOME/.bashrc.local"' >> ~/.bashrc
 
 echo "=== Installing Firefox... ==="
 sudo apt install -y firefox
+sudo rsync -avr conf/usr/lib/firefox/ /usr/lib/firefox
 
 echo "=== Installing Bitwarden... ==="
 sudo snap install bitwarden
